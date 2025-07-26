@@ -1,0 +1,11 @@
+
+uvicorn
+pandas
+openpyxl
+scikit-learn
+sentence-transformers
+pymongo
+python-dotenv
+requests
+python-multipart
+rank_bm25
