@@ -14,36 +14,41 @@ A hybrid retrieval-based issue analysis system that leverages semantic and keywo
 ```bash
 git clone https://github.com/abeeranajam31/Bugfixer-Protocol.git
 cd Bugfixer-Protocol
+```
 
 2. Create and Activate Virtual Environment
 
+```
 python -m venv venv
 # On macOS/Linux:
 source venv/bin/activate
 # On Windows:
 venv\Scripts\activate
-
+```
 3. Install Requirements
-
+```
 pip install -r requirements.txt
 
 You can generate requirements.txt using:
 
 pip freeze > requirements.txt
 
+```
 
 ⸻
 
 🧼 Preprocess Data
+```
 
 python Clean_Code.py
 
 Cleans the “Detailed Description” column from the Excel dataset and saves a refined version.
 
-⸻
+⸻```
+```
 
 🧠 Ingest Cleaned Data
-
+```
 python data_ingest.py
 
 	•	Reads the cleaned Excel file
@@ -54,9 +59,9 @@ python data_ingest.py
 	•	Stores everything in MongoDB (hybrid_retriever.issues)
 
 ⸻
-
+```
 🔍 Query the System
-
+```
 python query_issue.py
 
 	•	Takes a new issue/query
@@ -67,7 +72,7 @@ python query_issue.py
 	•	MCP Workflow Match (optional)
 
 ⸻
-
+```
 ⚙️ MCP Processor Workflow (Modular Custom Pipeline)
 
 The MCP Workflow applies logic-based matching and customizable pattern rules to post-process retrieved results.
@@ -80,9 +85,9 @@ Example Workflow:
 MCP can be extended via custom Python rules or YAML templates.
 
 ⸻
-
+```
 🖥️ Run the FastAPI Endpoint
-
+```
 uvicorn api:app --reload
 
 Serves a RESTful API for querying similar issues.
